@@ -1,4 +1,5 @@
 import Container from '../components/container'
+import Comment from '../components/comment'
 import Image from 'next/image'
 
 function HomePage() {
@@ -7,27 +8,25 @@ function HomePage() {
       <Container>
         <div className="space-y-6">
           <h1 className="text-2xl font-bold">
-            Hey, I'm a Senior Software Engineer at Company. I enjoy working with
-            Next.js and crafting beautiful front-end experiences.
+            Wecome to Grant Wizard!
           </h1>
           <p>
-            This portfolio is built with Next.js and a library called next-mdx.
-            It allows you to write Markdown and focus on the content of your
-            portfolio.
+            This demo site is the early alpha of grant wizard a web app that
+            takes a RPF (Request for Proposal) and generates a grant application.
           </p>
 
-          <p>Deploy your own in a few minutes.</p>
+          <p>
+            Here is what is build so far:
+          </p>
+          <ol>
+              <li>1. PDF data extractor (WIP)</li>
+              <li>2. PDF data sumarizer (next)</li>
+              <li>3. Grant APP section maker</li>
+          </ol>
+          <Comment />
+
         </div>
       </Container>
-
-      <div className="container max-w-4xl m-auto px-4 mt-20">
-        <Image
-          src="/desk.jpg"
-          alt="my desk"
-          width={1920 / 2}
-          height={1280 / 2}
-        />
-      </div>
     </>
   )
 }
