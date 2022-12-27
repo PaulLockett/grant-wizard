@@ -48,13 +48,16 @@ function HomePage() {
             Here is what is build so far:
           </p>
           <ol>
+              <li>0. Simple introductory demo (DONE see below) </li>)
               <li>1. PDF data extractor (WIP)</li>
               <li>2. PDF data sumarizer (next)</li>
               <li>3. Grant APP section maker</li>
+              <li>4. Grant APP full application maker</li>
+              <li>5. Prompt Engine...</li>
           </ol>
           <div className="w-full h-screen flex flex-col items-center justify-center">
           <textarea
-            placeholder="cars Maintenace "
+            placeholder=" Paste a section or paragraph of a RFP here and it will be summarized below"
             className="w-full h-full text-center text-gray-800 text-xl font-bold px-6 py-2 rounded-lg shadow-lg"
             value={userInput}
             onChange={onUserChangedText}
@@ -64,7 +67,7 @@ function HomePage() {
               className="w-full h-full text-center text-gray-800 text-xl font-bold px-6 py-2 rounded-lg shadow-lg"
               onClick={callGenerateEndpoint}
             >
-              <p>Generate</p>
+              <p>Summary</p>
             </a>
           </div>
           {apiOutput && (
@@ -80,7 +83,14 @@ function HomePage() {
             </div>
           )}
         </div>
-        // <Comment />
+
+        <h2 className="text-2xl font-bold">
+          <span className="text-gray-800">
+            Want to get a full grant application?
+          </span>
+        </h2>
+        <p> Drop a link below and I will generate a grant application for you. </p>
+        <Comment />
         </div>
       </Container>
     </>
