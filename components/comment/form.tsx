@@ -20,8 +20,8 @@ export default function CommentForm({
         rows={2}
         placeholder={
           isAuthenticated
-            ? `What are your thoughts?`
-            : 'Please login to leave a comment'
+            ? `Drop a link to a PDF or RFP and I'll email you the proposal in ~3 weeks.`
+            : 'Please login to add a link to a PDF or RFP that you want to generate a grant proposal for.'
         }
         onChange={(e) => setText(e.target.value)}
         value={text}
