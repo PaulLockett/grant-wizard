@@ -92,7 +92,7 @@ function HomePage() {
           </span>
         </h2>
         <p> Drop a link below and I will generate a grant application for you. </p>
-          {/* <Comment /> */}
+          <Comment />
         </div>
       </Container>
     </>
