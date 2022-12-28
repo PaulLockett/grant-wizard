@@ -18,10 +18,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
     // Use the OpenAI API to generate a response
     const response = await openai.createCompletion({
-      model: 'text-ada-001',
+      model: 'text-davinci-003',
       prompt,
       temperature: 0.8,
-      max_tokens: 2000
+      max_tokens: 1000
     });
     console.log(response);
     console.log(response.data);
@@ -31,6 +31,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     // Return the response from the OpenAI API
     res.status(200).json({ output: response.data.choices.pop() });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    console.log(error);
+    res.status(500).json({ error: error });
+    
   }
 }

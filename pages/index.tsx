@@ -23,9 +23,9 @@ function HomePage() {
 
     const data = await response.json();
     const { output } = data;
-    console.log("OpenAI replied...", output);
+    console.log("OpenAI replied...", output.text);
 
-    setApiOutput(`${output}`);
+    setApiOutput(`${output.text}`);
     setIsGenerating(false);
   };
   
