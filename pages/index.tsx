@@ -10,6 +10,7 @@ function HomePage() {
 
   const callGenerateEndpoint = async () => {
     setIsGenerating(true);
+    console.log("userInput: ", userInput)
 
     console.log("Calling OpenAI...");
     const response = await fetch("/api/simplify", {
@@ -17,19 +18,20 @@ function HomePage() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ userInput }),
+      body: JSON.stringify( {userInput} ),
     });
 
     const data = await response.json();
     const { output } = data;
-    console.log("OpenAI replied...", output.text);
+    console.log("OpenAI replied...", output);
 
-    setApiOutput(`${output.text}`);
+    setApiOutput(`${output}`);
     setIsGenerating(false);
   };
   
   const onUserChangedText = (event) => {
     setUserInput(event.target.value);
+    console.log(userInput);
   };
   
   return (
@@ -48,7 +50,7 @@ function HomePage() {
             Here is what is build so far:
           </p>
           <ol>
-              <li>0. Simple introductory demo (DONE see below) </li>)
+              <li>0. Simple introductory demo (DONE see below) </li>
               <li>1. PDF data extractor (WIP)</li>
               <li>2. PDF data sumarizer (next)</li>
               <li>3. Grant APP section maker</li>
@@ -63,12 +65,12 @@ function HomePage() {
             onChange={onUserChangedText}
           />
           <div className="w-full h-full flex flex-row items-center justify-center">
-            <a
-              className="w-full h-full text-center text-gray-800 text-xl font-bold px-6 py-2 rounded-lg shadow-lg"
+            <button
+              className="py-2 px-4 rounded bg-blue-600 text-white disabled:opacity-40 hover:bg-blue-700"
               onClick={callGenerateEndpoint}
             >
-              <p>Summary</p>
-            </a>
+              Summary
+            </button>
           </div>
           {apiOutput && (
             <div className="w-full h-full flex flex-col items-center justify-center">
@@ -90,7 +92,7 @@ function HomePage() {
           </span>
         </h2>
         <p> Drop a link below and I will generate a grant application for you. </p>
-        <Comment />
+          {/* <Comment /> */}
         </div>
       </Container>
     </>
