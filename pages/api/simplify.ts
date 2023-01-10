@@ -13,7 +13,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     const text = req.body.userInput;
 
     // Add the prefix to the text
-    const prompt = `Using no filler words and simple language, simplify the below text so that it's more concise. After your simplified text response, provide a comma separated list of the most important words, phrases, and relationships in the below text: ${text}`;
+    const prompt = `Using no filler words and simple language, simplify the below text so that it's more concise. After your simplified text response, after a "??" provide a comma separated list of the most important words, phrases, and relationships in the below text: ${text}`;
 
     // Use the OpenAI API to generate a response
     const response = await openai.createCompletion({
