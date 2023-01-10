@@ -1,4 +1,5 @@
 import 'tailwindcss/tailwind.css'
+import { Analytics } from '@vercel/analytics/react';
 
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
@@ -25,6 +26,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       <main className="py-14">
         <Component {...pageProps} />
       </main>
+      <Analytics />
     </Auth0Provider>
   )
 }

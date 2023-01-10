@@ -75,7 +75,7 @@ function HomePage() {
           {apiOutput && (
             <div className="w-full h-full flex flex-col items-center justify-center">
               <div className="w-full h-full flex flex-row items-center justify-center">
-                <div className="w-full h-full text-center text-gray-800 text-xl font-bold px-6 py-2 rounded-lg shadow-lg">
+                <div className="w-full h-full text-center text-gray-800 text-xl font-bold">
                   <h3>Output</h3>
                 </div>
               </div>

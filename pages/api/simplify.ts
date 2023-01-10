@@ -11,7 +11,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     // Extract the text to be simplified from the request body
     const text = req.body.userInput;
-    console.log(text);
 
     // Add the prefix to the text
     const prompt = `Using no filler words and simple language, simplify the below text so that it's more concise. After your simplified text response, provide a comma separated list of the most important words, phrases, and relationships in the below text: ${text}`;
@@ -23,10 +22,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       temperature: 0.8,
       max_tokens: 1000
     });
-    console.log(response);
-    console.log(response.data);
-    console.log(response.data.choices);
-    console.log(response.data.choices[0]);
 
     // Return the response from the OpenAI API
     res.status(200).json({ output: response.data.choices.pop() });

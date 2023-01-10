@@ -15,7 +15,7 @@ export default async function fetchComment(
 
   try {
     // get data
-    const rawComments = await redis.lrange(url, 0, -1)
+    const rawComments = await redis.lrange("url", 0, -1)
 
     // string data to object
     const comments = rawComments.map((c) => {

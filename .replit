@@ -1,4 +1,4 @@
-run = "yarn dev"
+run = "yarn vercel dev"
 hidden = [".build", ".config"]
 
 [packager]
